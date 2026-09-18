@@ -35,7 +35,8 @@
               "clinical/visits-queue",
               "clinical/consultations",
               "clinical/laboratory",
-              "clinical/prescriptions"
+              "clinical/prescriptions",
+              "clinical/pregnancy-care"
             ]
           },
           {
