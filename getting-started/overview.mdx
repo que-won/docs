@@ -1,5 +1,5 @@
 ---
-title: "eHealthSystem: Complete Clinic Management Platform"
+title: "eHealthSystem Overview: Core Modules and User Roles"
 sidebarTitle: "Overview"
 description: "An introduction to eHealthSystem's core modules and how they work together to streamline patient care, clinical workflows, and administrative tasks."
 ---
@@ -11,22 +11,22 @@ description: "An introduction to eHealthSystem's core modules and how they work 
 eHealthSystem is organised into purpose-built modules. Each module handles a distinct area of clinic operations, and together they form an end-to-end workflow for every patient encounter.
 
 <CardGroup cols={2}>
-  <Card title="Patient Management" icon="user">
+  <Card title="Patient Management" icon="user" href="/patients/registration">
     Register new patients, search existing records, manage demographics, and view a patient's full history of visits, test results, and prescriptions in one place.
   </Card>
-  <Card title="Clinical Workflows" icon="stethoscope">
+  <Card title="Clinical Workflows" icon="stethoscope" href="/clinical/visits-queue">
     Manage the daily visits queue, record triage observations, document consultation notes, issue referrals, and order laboratory tests — all linked directly to the patient visit.
   </Card>
-  <Card title="Laboratory" icon="flask">
+  <Card title="Laboratory" icon="flask" href="/clinical/laboratory">
     Receive lab test requests from clinicians, record sample collection, post results, and notify the requesting doctor when results are ready for review.
   </Card>
-  <Card title="Pharmacy" icon="pills">
+  <Card title="Pharmacy" icon="pills" href="/pharmacy/pharmacy">
     Review prescriptions issued during consultations, dispense medications, manage drug stock levels, and flag low-inventory alerts before shortages occur.
   </Card>
-  <Card title="Billing" icon="file-invoice-dollar">
+  <Card title="Billing" icon="file-invoice-dollar" href="/billing/billing-payments">
     Automatically compile charges for consultations, lab tests, and dispensed medications into a single invoice. Record cash, insurance, or mobile payment transactions and print receipts.
   </Card>
-  <Card title="Reports & Administration" icon="chart-bar">
+  <Card title="Reports & Administration" icon="chart-bar" href="/admin/reports">
     Generate clinical, financial, and operational reports. Manage user accounts, configure system settings, and control role-based access permissions across the facility.
   </Card>
 </CardGroup>
