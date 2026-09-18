@@ -1,0 +1,126 @@
+---
+title: "Ordering and Managing Laboratory Tests"
+sidebarTitle: "Laboratory"
+description: "Order lab tests, track sample collection status, enter results, and view completed laboratory reports for patients in eHealthSystem."
+---
+
+The Laboratory module connects clinicians, lab technicians, and patients in a unified workflow that eliminates paper-based request forms and manual result transcription. From the moment a clinician orders a test to the moment results are reviewed and acted upon, every step is tracked and time-stamped in eHealthSystem. This creates a clear audit trail, reduces the chance of lost or misfiled results, and allows clinicians to see results the instant they become available — even from inside an active consultation.
+
+---
+
+## Ordering a Lab Test
+
+You can order lab tests directly from within a patient consultation (see [Recording Patient Consultations](/clinical/consultations)) or independently through the Laboratory module. Both paths create the same type of order and appear identically in the lab queue.
+
+<Steps>
+  <Step title="Navigate to the lab order form">
+    Open a patient's active consultation and click **Order Lab Tests**, or navigate to **Laboratory** in the sidebar and click **New Order**. If you are starting from the Laboratory module, you will be prompted to search for the patient before the order form opens.
+  </Step>
+  <Step title="Search for and select the patient">
+    Type the patient's name, ID, or date of birth in the patient search field and select the correct record. If you accessed this form from within a consultation, the patient is already selected.
+  </Step>
+  <Step title="Select the tests to order">
+    Use the test search field to find the tests you want to order. You can search by test name, category, or code. Common tests include:
+    - **Haematology:** Full Blood Count (FBC), ESR, Blood Film
+    - **Chemistry:** Blood Glucose (Fasting / Random), Renal Function Tests, Liver Function Tests (LFTs), Lipid Profile, Thyroid Function Tests (TFTs)
+    - **Microbiology:** Urinalysis, Culture & Sensitivity, Stool MC&S
+    - **Serology / Immunology:** HIV Rapid Test, Hepatitis B Surface Antigen, RPR / VDRL
+    - **Endocrinology:** HbA1c, Serum Cortisol, FSH, LH
+
+    Click **Add** next to each test. All selected tests appear in the order summary panel on the right. You can remove a test before saving by clicking the **×** next to its name.
+  </Step>
+  <Step title="Add specimen instructions or notes">
+    In the **Specimen & Instructions** field, add any relevant notes for the lab technician — for example, *"Fasting sample — patient last ate 10 hours ago"*, *"Urgent — please prioritise"*, or *"Repeat test — compare with result from [date]."* If the order is urgent, toggle the **Mark as Urgent** switch to highlight it in the lab queue.
+  </Step>
+  <Step title="Save the order">
+    Click **Place Order**. The order is saved and immediately appears in the lab technician's worklist. A notification is sent to the laboratory (if your facility has lab notifications enabled). The ordering clinician can view the order status at any time from the patient's record or from the consultation. The visit status updates to **Lab Pending** if there is an active visit for this patient.
+  </Step>
+</Steps>
+
+---
+
+## Lab Order Statuses
+
+Every lab order moves through a defined set of statuses as it progresses from request to final result:
+
+| Status | Meaning |
+|---|---|
+| **Ordered** | The clinician has placed the order. The lab has been notified but the sample has not yet been collected. |
+| **Sample Collected** | A lab technician or phlebotomist has confirmed that the specimen has been collected from the patient. |
+| **Processing** | The sample is in the laboratory and the test is being run. |
+| **Result Available** | The lab technician has entered the results. The ordering clinician is notified and can now review the report. |
+| **Cancelled** | The order was cancelled before results were produced. A cancellation reason is recorded. |
+
+---
+
+## Sample Collection
+
+Once a patient is ready to have their sample taken, the lab technician or phlebotomist confirms collection in eHealthSystem:
+
+1. Navigate to **Laboratory** and open the **Pending Collection** list, which shows all orders with a status of **Ordered**.
+2. Locate the patient's order — you can search by patient name, order number, or requesting clinician.
+3. Click **Mark as Collected** on the relevant order.
+4. Confirm the specimen type (e.g., venous blood, midstream urine, throat swab) and the time of collection. If multiple tests are on the same order, you can mark individual specimens separately if they require different collection types.
+5. Click **Save**. The order status updates to **Sample Collected** and the sample is queued for processing.
+
+If a sample cannot be collected (for example, the patient has gone home), use the **Reject** option and select the reason. This notifies the requesting clinician so they can follow up.
+
+---
+
+## Entering Results
+
+When a test is complete, the lab technician enters the results into eHealthSystem:
+
+1. Open the **Processing** or **Sample Collected** list in the Laboratory module.
+2. Click **Enter Results** on the relevant order.
+3. For each test in the order, enter the result value and confirm the unit of measurement. The reference range for each analyte is displayed next to the input field — these ranges are configurable by your facility administrator.
+4. If a result falls outside the reference range, the field is highlighted and you must confirm whether the value is correct before saving.
+5. Mark any individual result as **Critical** if it represents a value that requires immediate clinician notification (see the [Critical Values warning](#critical-values) below).
+6. Click **Save Results**. The order status changes to **Result Available** and the requesting clinician receives a notification.
+
+---
+
+## Reviewing Results
+
+**For clinicians:** Once a result is available, you can review it in two places:
+
+- **From the patient's record:** Navigate to **Patients**, open the patient's record, and click the **Lab Results** tab. All historical and pending lab orders are listed here.
+- **From within a consultation:** If the consultation is still open and the patient's visit status is **Lab Pending**, a banner appears at the top of the consultation form when results are ready. Click **View Results** to open the result panel without leaving the consultation.
+
+Each result report shows the test name, result value, reference range, the date and time the sample was collected, and the name of the lab technician who entered the result.
+
+<Note>
+  Abnormal results — values outside the stated reference range — are displayed in **red** (if critically abnormal) or **amber** (if outside range but not critical) and marked with a warning icon. Review these values carefully. A result shown in red should prompt immediate clinical assessment.
+</Note>
+
+---
+
+## Critical Values
+
+<Warning>
+  When a result is flagged as a **critical value** — meaning it is abnormal to a degree that poses an immediate risk to the patient — eHealthSystem sends an urgent notification to the requesting clinician and displays a prominent alert in the lab module. Do not simply save and move on. Communicate the critical value directly to the responsible clinician by phone or in person as soon as possible, in accordance with your facility's critical value policy. Document the notification in the system using the **Log Clinician Notification** button on the result record.
+</Warning>
+
+---
+
+## Printing and Exporting Lab Reports
+
+To print or export a completed lab result:
+
+1. Open the result from the patient's **Lab Results** tab or from the consultation.
+2. Click **Print Report** to generate a formatted PDF report that includes the patient's details, the requesting clinician's name, the test results, reference ranges, and the laboratory's details.
+3. To export the result as a PDF file, click **Export as PDF** and save the file to your device.
+4. If your facility has electronic results sharing enabled, click **Share with Patient** to send the report to the patient's registered email or patient portal account.
+
+---
+
+## Cancelling or Rejecting Test Orders
+
+**Cancelling an order:** If a test is no longer needed (for example, the patient has been discharged, or the clinician changed the management plan), you can cancel the order as long as it has not yet reached **Result Available** status:
+
+1. Open the order from **Laboratory > All Orders** or from the patient's record.
+2. Click **Cancel Order**.
+3. Select a cancellation reason from the dropdown (e.g., *Test no longer required*, *Patient discharged*, *Duplicate order*, *Clinical decision change*).
+4. Click **Confirm Cancellation**. The order status updates to **Cancelled** and the requesting clinician is notified.
+
+**Rejected orders:** An order may be rejected by the lab if the sample is insufficient, haemolysed, incorrectly labelled, or received outside the required handling window. When a lab technician rejects a sample, they select a rejection reason and the requesting clinician receives a notification. A rejected order does not produce a result — the clinician must review the rejection reason and, if appropriate, place a new order and arrange for a fresh sample to be collected.

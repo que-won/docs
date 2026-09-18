@@ -1,0 +1,129 @@
+---
+title: "Viewing and Updating Patient Medical History"
+sidebarTitle: "Medical History"
+description: "Access and manage a patient's complete medical history in eHealthSystem, including chronic conditions, allergies, past surgeries, medications, and immunizations."
+---
+
+The **Medical History** module gives clinicians and authorized staff a comprehensive, longitudinal view of everything clinically relevant about a patient — from the chronic conditions they live with every day, to the medications they are currently taking, to the surgeries they underwent years ago. Keeping this information current and accurate is one of the most important responsibilities in eHealthSystem: a complete medical history enables safer prescribing, reduces diagnostic errors, and ensures that every member of the care team — regardless of which department they work in — has the context they need to provide excellent care.
+
+## Accessing Medical History
+
+To open a patient's medical history:
+
+1. Navigate to **Patients** > **Patient Management** and search for the patient.
+2. Click the patient's name to open their record.
+3. Click the **Medical History** tab at the top of the patient record.
+
+The Medical History tab is organized into clearly labeled sections. Use the in-page navigation links at the top of the tab to jump directly to a specific section, or scroll through the full record.
+
+## Sections of the Medical History Record
+
+### Chronic Conditions
+
+This section lists all long-term and ongoing medical conditions that have been documented for the patient. Each entry includes the condition name (with ICD-10 code where applicable), the date it was diagnosed or first recorded, its current status (Active, Managed, Resolved), and the name of the clinician who documented it. Common examples include Type 2 Diabetes Mellitus, Essential Hypertension, Asthma, and Chronic Kidney Disease.
+
+### Known Allergies
+
+The allergies section records all documented allergic and adverse reactions, organized into three subcategories:
+
+- **Medication Allergies** — specific drugs or drug classes that cause an adverse reaction (e.g., Penicillin, Sulfonamides, Ibuprofen)
+- **Food Allergies** — dietary items that trigger reactions (e.g., peanuts, shellfish, lactose)
+- **Environmental Allergies** — airborne or contact triggers (e.g., pollen, latex, dust mites)
+
+Each allergy entry records the allergen, the type of reaction (e.g., anaphylaxis, rash, nausea), the severity (Mild, Moderate, Severe, Life-threatening), and the date first reported. A red **Allergy Alert** banner appears at the top of the patient record whenever the patient has one or more documented allergies, ensuring that every user who opens the record is immediately aware.
+
+### Past Surgeries and Hospitalizations
+
+This section provides a timeline of all previous surgical procedures and inpatient admissions, including procedures performed at other facilities if that information has been provided. Each entry captures the procedure or admission type, the date, the facility name (if external), and any relevant notes such as complications or outcomes. A history of prior surgeries is critical context for anesthesiologists, surgeons, and any clinician planning an invasive procedure.
+
+### Current and Past Medications
+
+The medications section is divided into two views:
+
+- **Current Medications** — drugs the patient is actively taking, including dose, frequency, route of administration, start date, prescribing clinician, and whether the prescription originated in eHealthSystem or was imported from an external record.
+- **Medication History** — all past medications, including those that were discontinued, completed courses, or superseded by a new prescription. Discontinued entries show the stop date and reason for discontinuation.
+
+Prescriptions issued through eHealthSystem's Prescriptions module are automatically reflected here; externally sourced medications can be added manually by authorized clinical staff.
+
+### Family History
+
+The family history section records medically significant conditions in the patient's immediate biological family members (parents, siblings, grandparents, children). This information supports risk assessment for hereditary and genetically influenced conditions such as cardiovascular disease, certain cancers, and diabetes. Each entry captures the family member's relationship, the condition, and whether the family member is living or deceased.
+
+### Immunization Records
+
+This section tracks all vaccines administered to the patient, either recorded directly in eHealthSystem or imported from an external immunization registry. Each entry includes the vaccine name, the dose number (if part of a multi-dose series), the date of administration, the lot number, the administering facility or clinician, and the date the next dose is due (if applicable). Immunization records are especially critical for pediatric patients and for staff occupational health compliance tracking.
+
+### Vital Signs History
+
+The vital signs section displays a chronological log of all vital sign measurements recorded for the patient across all visits. Measurements include blood pressure, pulse rate, respiratory rate, temperature, oxygen saturation (SpO₂), weight, height, and BMI. You can view the raw table of readings or switch to a **Chart View** to visualize trends over time — for example, to see how a hypertensive patient's blood pressure has trended across the past year.
+
+## Adding a New Entry
+
+<Steps>
+  <Step title="Open the Medical History Tab">
+    Open the patient record and click the **Medical History** tab. Scroll to or use the in-page navigation to reach the section you want to update — for example, **Chronic Conditions** or **Known Allergies**.
+  </Step>
+  <Step title="Click 'Add Entry'">
+    At the top-right of the relevant section, click the **+ Add Entry** button. A data entry panel slides open on the right side of the screen.
+  </Step>
+  <Step title="Complete the Entry Form">
+    Fill in the details for the new entry. For a **Chronic Condition**, enter:
+    - **Condition Name** — start typing to search the ICD-10 code list, or enter a free-text description
+    - **Date of Diagnosis** (or date first reported, if the exact diagnosis date is unknown)
+    - **Current Status** — Active, Managed, or Resolved
+    - **Notes** — any relevant clinical context, such as severity, management approach, or complications
+
+    For a **Known Allergy**, enter:
+    - **Allergen Name** — search from the known allergen list or enter free text
+    - **Allergy Type** — Medication, Food, or Environmental
+    - **Reaction Description** — describe the specific reaction the patient experiences
+    - **Severity** — Mild, Moderate, Severe, or Life-threatening
+    - **Date First Reported**
+  </Step>
+  <Step title="Save the Entry">
+    Review the information and click **Save**. The new entry appears immediately in the section list. If you added a life-threatening allergy, eHealthSystem activates or updates the **Allergy Alert** banner on the patient record automatically.
+  </Step>
+</Steps>
+
+## Editing or Correcting Existing Entries
+
+To edit an existing medical history entry, locate it in the relevant section, click the **⋮ Actions** icon to the right of the entry, and select **Edit**. Make your corrections in the form panel and click **Save**.
+
+<Note>
+  Every change to the medical history — including edits to existing entries and new additions — is automatically recorded in the patient's **Audit Log**. The audit entry captures the user who made the change, the date and time, the previous value, and the new value. This means corrections are fully traceable; information is never silently overwritten. If you need to dispute or review a change made by another user, navigate to the patient record's **Audit Log** tab and filter by the Medical History module.
+</Note>
+
+To remove an erroneous entry entirely, click **⋮ Actions** > **Delete Entry**. You will be prompted to enter a reason for the deletion before it is confirmed. Deleted entries are removed from the active view but are retained in the audit log for compliance purposes.
+
+## Accurate Allergy Documentation
+
+<Warning>
+  Incomplete or inaccurate allergy information is a leading cause of preventable adverse drug events. Always document every allergy reported by the patient, and never leave the allergies section blank without first confirming that the patient has **No Known Allergies (NKA)**. If the patient reports no allergies, explicitly record this by clicking **Mark as No Known Allergies** in the allergies section — this signals to other clinicians that the question was asked and answered, rather than simply left blank. Before prescribing any medication, verify the patient's allergy list. If a prescribed drug matches a documented allergy, eHealthSystem will display a clinical alert — do not override this alert without documented clinical justification.
+</Warning>
+
+## Printing or Exporting Medical History
+
+You can generate a formatted medical history summary for referral letters, specialist consultations, or patient-requested records.
+
+1. From the **Medical History** tab, click the **Export / Print** button in the top-right corner.
+2. Select the sections you want to include in the export (e.g., Chronic Conditions, Allergies, Current Medications, Immunizations).
+3. Choose your output format: **Print Preview** (for physical printing), **PDF Download**, or **Share via Secure Link** (generates a time-limited, access-controlled link you can send to a receiving facility).
+4. Click **Generate**. The document is formatted with your facility's letterhead and includes the patient's name, date of birth, Patient ID, and the date the report was generated.
+
+For bulk exports or integration with an external referral system, contact your system administrator to configure the appropriate data exchange settings.
+
+## Role Permissions for Medical History
+
+Access to the Medical History module is role-controlled. The table below summarizes what each role can do by default. Your system administrator can customize these permissions to match your facility's policies.
+
+| Role | View Medical History | Add / Edit Entries | Delete Entries | Export / Print |
+|---|---|---|---|---|
+| Administrator | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes |
+| Doctor / Physician | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes |
+| Clinical Officer | ✅ Yes | ✅ Yes | ⚠️ With justification | ✅ Yes |
+| Nurse | ✅ Yes | ⚠️ Limited (vitals, immunizations) | ❌ No | ✅ Yes |
+| Pharmacist | ✅ Yes (medications & allergies only) | ❌ No | ❌ No | ❌ No |
+| Receptionist | ❌ No | ❌ No | ❌ No | ❌ No |
+| Lab Technician | ✅ Yes (read-only) | ❌ No | ❌ No | ❌ No |
+
+If you require a permission level beyond what your current role allows — for example, a nurse who needs to document a patient-reported chronic condition — ask your system administrator to grant the specific additional permission to your account.

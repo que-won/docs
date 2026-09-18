@@ -1,0 +1,189 @@
+---
+title: "Processing Billing and Payments in eHealthSystem"
+sidebarTitle: "Billing"
+description: "Create patient invoices, apply insurance claims, record payments, manage outstanding balances, and generate billing receipts in eHealthSystem."
+---
+
+The Billing & Payments module in eHealthSystem manages the complete financial lifecycle of every patient visit — from invoice generation through payment collection and receipt issuance. The system automatically compiles all billable items generated during a visit (consultations, laboratory tests, medications, and procedures) into a single patient invoice, reducing manual data entry and the risk of missed charges. Billing staff can record payments across multiple payment methods, process insurance claims, manage outstanding balances, and issue refunds — all within a fully audited environment.
+
+---
+
+## How Billing Works
+
+Every chargeable action recorded in eHealthSystem during a patient's visit feeds directly into that patient's bill:
+
+- When a clinician logs a **consultation**, the applicable consultation fee is added automatically.
+- When the laboratory posts **test results**, the associated lab charges are included.
+- When the pharmacy **dispenses medications**, drug charges are appended to the bill.
+- When a **procedure** is performed and documented in the clinical module, the procedure fee is added.
+
+This automatic aggregation means the patient's bill is always up to date as the visit progresses. Billing staff can review, adjust, and finalize the invoice at any point — typically at discharge or at the end of a visit.
+
+---
+
+## Creating an Invoice
+
+<Steps>
+  <Step title="Navigate to Billing & Payments">
+    Select **Billing & Payments** from the main sidebar. The billing dashboard opens, showing today's active visits, recently created invoices, and any outstanding balances requiring follow-up.
+  </Step>
+  <Step title="Find the patient">
+    Use the **search bar** to look up the patient by name, patient ID, or visit number. You can also click **Visit Queue** to see all patients currently checked in at your facility and select the relevant visit directly from the list.
+  </Step>
+  <Step title="Review the auto-generated bill items">
+    The invoice screen displays all charges automatically pulled from the patient's visit. Review each line item carefully — check that the service descriptions, quantities, and unit prices are accurate. If you spot a duplicate or an item that was added in error, click the **trash icon** next to that item to remove it before saving.
+  </Step>
+  <Step title="Add additional charges or adjustments">
+    If any billable items were not captured automatically (for example, an administrative fee, a consumable used during a procedure, or a service recorded outside the system), click **Add Item**. Select the service or product from the catalogue, enter the quantity, and confirm the unit price. The invoice total updates immediately.
+  </Step>
+  <Step title="Apply discounts">
+    To apply a discount, click **Add Discount** and choose one of the following options:
+    - **Percentage discount** — enter a percentage to reduce the total bill (e.g., 10% staff discount).
+    - **Fixed amount discount** — enter a specific monetary value to deduct.
+    - **Line-item discount** — click the discount icon on an individual line item to reduce that specific charge.
+
+    Select a discount reason from the dropdown (e.g., *Staff Benefit*, *Hardship Waiver*, *Promotional*) so the adjustment is documented in the audit trail.
+  </Step>
+  <Step title="Save the invoice">
+    Click **Save Invoice**. The invoice is assigned a unique invoice number, timestamped, and linked to the patient's record and visit. Its status is set to **Unpaid**. You can now proceed to record a payment or share the invoice with the patient for review.
+  </Step>
+</Steps>
+
+---
+
+## Invoice Line Items
+
+A standard eHealthSystem invoice may include any combination of the following charge categories:
+
+| Category | Description |
+|---|---|
+| **Consultation Fee** | Charged when a clinician conducts an outpatient or inpatient consultation |
+| **Lab Test Charges** | Fees for each diagnostic test ordered and processed in the laboratory |
+| **Medication Charges** | Cost of drugs dispensed from the pharmacy during the visit |
+| **Procedure Charges** | Fees for clinical procedures (e.g., dressings, minor surgery, injections) |
+| **Admission / Bed Charges** | Daily ward or room charges for admitted patients |
+| **Other Fees** | Administrative fees, consumables, or any facility-specific charges |
+
+Each item shows the service name, quantity, unit price, and line total. The invoice footer displays the subtotal, any discounts applied, taxes (if configured), and the final amount due.
+
+---
+
+## Payment Methods
+
+eHealthSystem supports multiple payment methods to accommodate the full range of patients at your facility. When recording a payment, select one of the following:
+
+- **Cash** — Record the cash amount received. The system calculates and displays any change due.
+- **Card** — Select Debit or Credit Card and enter the card type and the last four digits of the card (or the POS terminal reference number) as a reference.
+- **Mobile Money** — Enter the mobile money transaction reference number provided by the payment network (e.g., M-Pesa, MTN MoMo). This reference is stored for reconciliation purposes.
+- **Insurance** — Mark all or part of the invoice as covered by the patient's insurance scheme. See the [Insurance Claims](#insurance-claims) section below for the full workflow.
+- **Waiver** — Apply when the facility has formally approved a full or partial fee waiver. A waiver reason and an authorizing user must be recorded. Waivers above a configured threshold require a supervisor's approval before they can be saved.
+
+You can **split a payment across multiple methods** — for example, part paid by insurance and the remainder paid in cash. Click **Add Payment Method** to add a second or third payment source against the same invoice.
+
+---
+
+## Recording a Payment
+
+<Steps>
+  <Step title="Open the patient's invoice">
+    From the Billing dashboard or by searching for the patient, open their invoice. Invoices with an **Unpaid** or **Partially Paid** status are eligible for payment recording.
+  </Step>
+  <Step title="Click 'Record Payment'">
+    Click the **Record Payment** button at the top right of the invoice screen. A payment entry panel slides open alongside the invoice.
+  </Step>
+  <Step title="Select the payment method">
+    Choose the payment method from the dropdown. If the patient is paying with a combination of methods (e.g., part insurance, part cash), select the first method now — you will be able to add a second after confirming the first.
+  </Step>
+  <Step title="Enter the amount paid">
+    Type in the amount being paid with this method. The panel shows the **total amount due** and the **remaining balance** as you type, so you can easily see how much of the invoice this payment covers.
+  </Step>
+  <Step title="Add a payment reference">
+    If applicable, enter a reference number: the POS receipt number for card payments, the mobile money transaction ID, the insurance pre-authorization code, or the cash receipt number from your cashier system. This reference is stored against the payment record and is searchable during audits or reconciliation.
+  </Step>
+  <Step title="Confirm the payment">
+    Click **Confirm Payment**. The system updates the invoice balance, changes the invoice status to **Partially Paid** or **Paid in Full** as appropriate, and records the payment entry in the audit log with your username and a timestamp. A receipt is automatically generated and can be printed immediately.
+  </Step>
+</Steps>
+
+---
+
+## Insurance Claims
+
+### Marking Items as Insurance-Covered
+
+When a patient has active insurance coverage, you can mark specific invoice line items — or the entire invoice — as covered by their scheme:
+
+1. Open the invoice and click **Apply Insurance**.
+2. Select the line items covered by insurance (or click **Select All** if all items are covered).
+3. The system splits the invoice into an **insurance portion** and a **patient co-payment portion**.
+
+### Entering Insurance Provider and Policy Details
+
+In the insurance panel, complete the following fields:
+
+- **Insurance Provider** — Select the provider from the dropdown list of your facility's contracted schemes. If the provider is not listed, contact your administrator to add them under **Settings → Insurance Providers**.
+- **Policy / Member Number** — Enter the patient's insurance membership or policy number exactly as it appears on their card.
+- **Scheme / Plan Type** — Select the relevant plan (e.g., In-Patient, Out-Patient, Dental) if the provider offers multiple scheme types.
+- **Pre-Authorization Code** — If the service required pre-authorization, enter the code issued by the insurer.
+
+### Submitting a Claim
+
+Once insurance details are entered:
+
+1. Review the insurance-covered amount and the patient co-payment balance.
+2. Click **Submit Claim**. The system logs the claim as **Submitted** and timestamps it.
+3. Collect any co-payment from the patient using the standard [Record Payment](#recording-a-payment) workflow.
+
+<Note>
+Insurance claim verification and settlement typically take additional time depending on the insurer's processing schedule — often several business days to a few weeks. The invoice will show a status of **Claim Pending** until the insurer confirms settlement. During this time, the outstanding insurance portion does not count as patient debt. You can track all submitted claims and their statuses under **Billing → Insurance Claims**.
+</Note>
+
+---
+
+## Outstanding Balances
+
+To view and follow up on unpaid or partially paid invoices:
+
+1. Navigate to **Billing & Payments → Outstanding Balances**.
+2. Use the filters to narrow by date range, amount due, patient name, or visit type.
+3. Click on any invoice to open the full record and view the payment history.
+
+To send a payment reminder:
+
+- Click **Send Reminder** on the invoice to trigger an SMS or email notification to the patient (depending on their contact preferences) with the outstanding amount and a payment reference.
+
+You can also flag accounts for follow-up by clicking **Mark for Follow-Up**, which adds the invoice to a dedicated follow-up worklist visible to your billing team. Notes can be added to each outstanding account to document contact attempts and payment arrangements.
+
+---
+
+## Refunds and Credit Notes
+
+If a patient has overpaid, or a service was billed and then cancelled after payment was already collected, you can issue a refund or credit note:
+
+1. Open the original paid invoice.
+2. Click **Issue Refund / Credit Note**.
+3. Select the type:
+   - **Refund** — return funds to the patient via their original payment method.
+   - **Credit Note** — apply a credit to the patient's account that offsets future invoices.
+4. Enter the amount to refund or credit and the reason.
+5. For refunds, enter the reference of the refund transaction (e.g., reversal reference from the card terminal or mobile money platform).
+6. Click **Confirm**. The original invoice is updated to reflect the refund, and a credit note or refund receipt is generated and attached to the patient's billing history.
+
+All refund and credit note transactions are logged in the audit trail with the user account, timestamp, and reason.
+
+---
+
+## Printing Payment Receipts
+
+After recording a payment, print a receipt for the patient in either of these ways:
+
+- **Immediately after payment:** Click **Print Receipt** on the payment confirmation screen that appears after you confirm the payment.
+- **From the invoice record:** Open the invoice at any time, click **Actions → Print Receipt**, and select the specific payment transaction you want to print.
+
+Receipts include the facility name and logo, patient name and ID, invoice number, itemized list of charges, payment method(s), amount paid, remaining balance, and the cashier's name. You can configure the receipt header and footer content under **Settings → Billing → Receipt Templates**.
+
+---
+
+<Warning>
+**Voiding an invoice is irreversible.** Only void an invoice if it was created in error and no payment has been collected. To void, open the invoice and select **Actions → Void Invoice**, then provide a mandatory reason. Voided invoices are permanently marked as void, removed from the patient's active balance, and recorded in the audit history — including the user who performed the void action and the stated reason. If a payment has already been collected against an invoice, use a **Refund** or **Credit Note** instead of voiding. If you are unsure, consult your billing supervisor before proceeding.
+</Warning>

@@ -1,0 +1,100 @@
+---
+title: "Managing Patient Records in eHealthSystem"
+sidebarTitle: "Management"
+description: "Search, view, update, and manage existing patient records in eHealthSystem, including editing demographics, reviewing visit history, and archiving records."
+---
+
+The **Patient Management** module is your central hub for everything related to patient records after registration. From here you can search for any patient, view their complete profile, update their personal or contact information, track their visit history, manage their status, and perform administrative actions such as merging duplicate records or archiving inactive patients. Every action in Patient Management is role-controlled and fully audit-logged so your facility maintains an accurate, tamper-evident record of all changes.
+
+## Searching for Patients
+
+To locate a patient record, navigate to **Patients** > **Patient Management** in the sidebar. The Patient Management screen displays a searchable, paginated list of all registered patients.
+
+Use the **search bar** at the top of the list to find a specific patient. You can search by:
+
+| Search Method | Example Input | Notes |
+|---|---|---|
+| Full or partial name | `Sarah Mwangi` or `Mwangi` | Case-insensitive; matches first or last name |
+| Patient ID | `PT-2024-004821` | Returns an exact match |
+| Phone number | `0712345678` | Matches primary or secondary number |
+| National ID | `12345678` | If collected during registration |
+| Date of birth | `15/04/1988` | Use DD/MM/YYYY format |
+
+As you type, the list filters in real time. If your search returns many results, apply additional filters using the **Filter** button — you can narrow results by gender, registration date range, patient status (Active / Inactive), or assigned care team.
+
+## Viewing a Patient Record
+
+Click any patient row in the list to open their full record. The patient record is organized into tabs so you can quickly jump to the information you need:
+
+- **Overview** — a summary card showing the patient's name, Patient ID, date of birth, gender, primary contact, and current status. A photo appears here if one was uploaded at registration.
+- **Personal Details** — full demographic and contact information, including address, emergency contact, and insurance details.
+- **Visit History** — a chronological list of all outpatient and inpatient visits. Each entry shows the date, attending clinician, department, chief complaint, and disposition. Click any visit to expand the consultation notes.
+- **Medical History** — chronic conditions, known allergies, past surgeries, family history, immunizations, and vital signs history. See [Medical History](/patients/medical-history) for full details.
+- **Prescriptions** — all prescriptions issued to the patient, including current active prescriptions and historical ones, with dispensing status from the pharmacy.
+- **Lab Results** — test requests and their results, grouped by date. You can view reference ranges inline and flag any out-of-range results.
+- **Billing** — invoices, payments, insurance claims, and outstanding balances linked to this patient.
+- **Documents** — uploaded files such as referral letters, consent forms, and external reports.
+- **Audit Log** — a read-only trail of every change made to the record, including who made the change and when.
+
+## Editing Patient Details
+
+To update a patient's demographic or contact information, open the patient record and click the **Edit** button in the top-right corner of the **Personal Details** tab. The form fields become editable. Make your changes and click **Save Changes** to apply them.
+
+You can update the following fields without elevated permissions (subject to your role):
+- Phone numbers (primary and secondary)
+- Email address
+- Physical address
+- Emergency contact name and phone number
+- Insurance provider and membership details
+- Profile photo
+
+<Note>
+  Some fields — such as the patient's legal name, date of birth, national ID, and gender — may require elevated permissions (Supervisor or Administrator role) to edit after the initial registration. This restriction protects the integrity of the patient identity record. If you need to correct a core demographic field due to a data entry error, contact your system administrator or a user with the appropriate permissions to make the change on your behalf. All such edits are recorded in the Audit Log.
+</Note>
+
+## Patient Status: Active vs. Inactive
+
+Every patient record carries a **Status** that controls whether the patient appears in standard searches and can be scheduled for new appointments:
+
+- **Active** — the default status for all newly registered patients. Active patients are fully accessible across all modules.
+- **Inactive / Archived** — used for patients who are deceased, have permanently transferred to another facility, or are otherwise no longer attending. Inactive patients are hidden from default search results but their records are preserved. To include inactive patients in a search, enable the **Show Inactive Patients** toggle on the search bar.
+
+To change a patient's status, open their record, click the **Actions** menu (⋮) in the top-right corner, and select **Mark as Inactive** or **Reactivate Patient**. You will be prompted to confirm the action and optionally enter a reason.
+
+## Updating Patient Contact Information
+
+<Steps>
+  <Step title="Open the Patient Record">
+    Search for the patient in **Patients** > **Patient Management** and click their name to open the record.
+  </Step>
+  <Step title="Go to Personal Details">
+    Click the **Personal Details** tab to display the full contact and demographic information.
+  </Step>
+  <Step title="Enable Edit Mode">
+    Click the **Edit** button in the top-right corner of the tab. All editable fields change from read-only text to input fields.
+  </Step>
+  <Step title="Update the Relevant Fields">
+    Locate the contact information section and update the fields that have changed — for example, enter the new phone number in the **Primary Phone Number** field, or update the **Physical Address** fields with the patient's new location.
+  </Step>
+  <Step title="Save Your Changes">
+    Click **Save Changes** at the bottom of the form. eHealthSystem validates the inputs (for example, checking that the phone number format is valid) and saves the record. A success notification confirms the update. The Audit Log records the change automatically, including the previous and new values.
+  </Step>
+</Steps>
+
+## Merging Duplicate Records
+
+If the same patient was registered more than once — for example, because the duplicate warning was bypassed or the patient used a different name variation — you can consolidate the two records into a single authoritative profile. Only users with the **Administrator** role can perform a merge.
+
+To merge duplicate records, navigate to **Administration** > **Data Quality** > **Duplicate Patients**, locate the pair of records to merge, and follow the guided merge wizard. The wizard lets you choose which record becomes the primary profile and which data fields to retain from each record. All visit history, lab results, prescriptions, and billing entries from both records are combined under the primary profile after the merge. The secondary record is retired and no longer appears in searches.
+
+## Deleting Patient Records
+
+<Warning>
+  Patient records **cannot be permanently deleted** in eHealthSystem. Permanent deletion is disabled by design to protect medical record integrity, comply with healthcare data retention regulations, and maintain a complete audit trail. If a record was created in error (for example, a test record or a clear mis-entry), contact your system administrator — administrators can submit a record removal request through the **Data Management** panel, which requires additional approval before any action is taken. For all other cases, use the **Archive (Mark as Inactive)** action instead.
+</Warning>
+
+## Linking Family Members or Related Patients
+
+eHealthSystem allows you to link related patient records — for example, to connect a child's record to a parent's, or to note that two patients are siblings. This is especially useful for family medicine practices and pediatric departments.
+
+To link a related patient, open the patient record, click the **Actions** menu (⋮), and select **Link Related Patient**. Search for the related individual by name or Patient ID, select the relationship type (e.g., Parent, Child, Sibling, Spouse, Guardian), and click **Confirm Link**. The linked individuals appear in a **Related Patients** section on both records' Overview tabs, and you can click through to navigate between them directly.

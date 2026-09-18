@@ -1,0 +1,90 @@
+---
+title: "Generating Reports and Analytics in eHealthSystem"
+sidebarTitle: "Reports"
+description: "Generate clinical, financial, and operational reports in eHealthSystem to monitor patient activity, revenue, lab output, pharmacy stock, and staff performance."
+---
+
+The Reports module gives you a centralized view of your clinic's clinical, financial, and operational performance. Use it to track patient trends, monitor revenue, evaluate lab and pharmacy throughput, and measure staff activity — all from a single dashboard. Whether you need a quick daily summary or a detailed monthly breakdown, eHealthSystem's reporting tools help you make confident, data-driven decisions.
+
+## Accessing Reports
+
+Navigate to **Reports** in the left sidebar. This module is typically restricted to users with an **Admin** or **Manager/Supervisor** role. If you do not see the Reports option in your sidebar, contact your system administrator to confirm your access permissions.
+
+## Available Report Types
+
+eHealthSystem organizes reports into six categories, each designed to surface the metrics most relevant to that area of your operation.
+
+### Patient Reports
+
+- **New Registrations**: total new patients registered within a selected date range
+- **Active Patients**: patients with at least one visit or consultation in a given period
+- **Patient Demographics**: breakdown by age group, gender, and location
+
+### Visit Reports
+
+- **Daily / Weekly / Monthly Visits**: total visit volume over time
+- **Visits by Doctor**: patient encounters attributed to each clinician
+- **Visits by Department**: volume per department or service unit (e.g., General Outpatient, Maternity, Paediatrics)
+
+### Clinical Reports
+
+- **Diagnoses by Frequency**: the most commonly recorded diagnoses (ICD codes or custom entries) over a period
+- **Lab Test Volumes**: total orders and completed results per test type
+- **Prescription Frequency**: the most frequently prescribed medications
+
+### Financial Reports
+
+- **Revenue by Period**: total invoiced and collected amounts for any date range
+- **Outstanding Balances**: unpaid or partially paid invoices across all patients
+- **Payment Methods Breakdown**: revenue split by cash, insurance, mobile money, card, or other methods
+- **Invoice Summaries**: line-item summaries of all invoices within a period
+
+### Pharmacy Reports
+
+- **Dispensed Medications**: quantities and values of medications dispensed over a period
+- **Current Stock Levels**: snapshot of inventory quantities for all items in the formulary
+- **Expiry Reports**: medications approaching or past their expiry date, grouped by urgency
+
+### Staff Reports
+
+- **Activity by User**: actions performed per staff member (consultations created, invoices raised, etc.)
+- **Login History**: a chronological log of staff logins and logouts, with timestamps and IP addresses
+
+## Generating a Report
+
+<Steps>
+  <Step title="Navigate to Reports">
+    Click **Reports** in the left sidebar to open the Reports module.
+  </Step>
+  <Step title="Select the report category and type">
+    Choose a category (for example, **Financial Reports**) and then select the specific report you want to generate (for example, **Revenue by Period**).
+  </Step>
+  <Step title="Set the date range and filters">
+    Use the date picker to define your reporting period. Depending on the report type, additional filters may be available — such as **Department**, **Doctor**, **Payment Method**, or **Medication**. Apply any filters that will help narrow the results to what you need.
+  </Step>
+  <Step title="Click 'Generate Report'">
+    Click the **Generate Report** button. The system processes your request and displays the results on screen, typically as a table with summary totals.
+  </Step>
+  <Step title="View or export the results">
+    Review the results in the browser. Use the export options to download the report if you need to share it or archive it (see [Exporting Reports](#exporting-reports) below).
+  </Step>
+</Steps>
+
+## Exporting Reports
+
+Every report in eHealthSystem can be exported in two formats:
+
+- **PDF**: best for sharing, printing, or attaching to formal records. The exported PDF includes your clinic's name and logo, the report title, the selected date range, and all filter parameters.
+- **CSV**: best for further analysis in spreadsheet tools such as Microsoft Excel or Google Sheets. The CSV contains the raw tabular data from the report.
+
+To export, click the **Export PDF** or **Export CSV** button displayed above the report results after generation.
+
+## Scheduled Reports
+
+<Note>
+  If your eHealthSystem installation includes the scheduled reporting feature, you can configure reports to be generated and delivered automatically — by email or saved to a shared directory — on a daily, weekly, or monthly schedule. Navigate to **Reports > Scheduled Reports** to set up or manage automated deliveries. Contact your system administrator if this option is not visible, as it may require server-level configuration.
+</Note>
+
+<Tip>
+  Use the date range filter to compare two periods side by side. For example, generate a **Revenue by Period** report for the current month and again for the same month last year, then export both as CSV files. Opening them together in a spreadsheet lets you build a quick year-on-year comparison without any additional tooling.
+</Tip>

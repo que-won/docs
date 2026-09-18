@@ -1,0 +1,99 @@
+---
+title: "Register a New Patient in eHealthSystem"
+sidebarTitle: "Registration"
+description: "Learn how to register new patients in eHealthSystem, including entering demographic details, contact information, and generating a unique patient ID."
+---
+
+Patient registration is the starting point for every care journey in eHealthSystem. Before a patient can receive treatment, schedule an appointment, or have lab results recorded, a patient record must exist in the system. Registering a patient correctly — with accurate demographic, contact, and insurance details — ensures that every downstream workflow, from billing to prescriptions, runs without interruption.
+
+## Who Can Register Patients
+
+Any user assigned the **Receptionist** role can register new patients by default. Users with other roles — such as Nurse, Clinical Officer, or Administrator — can also register patients if their account has been granted the **Registration** permission by a system administrator. If you don't see the registration option in your sidebar, contact your system administrator to review your role permissions.
+
+## Registration Process
+
+<Steps>
+  <Step title="Open the New Patient Form">
+    In the left sidebar, navigate to **Patients** > **Register New Patient**. The patient registration form opens in the main content area. If you are already inside the Patient Management module, you can also click the **+ New Patient** button in the top-right corner of the patient list.
+  </Step>
+  <Step title="Enter Personal Details">
+    Fill in the required personal information:
+    - **First Name** and **Last Name**
+    - **Date of Birth** — use the date picker or type in `DD/MM/YYYY` format
+    - **Gender** — select from the dropdown (Male, Female, Other, Prefer not to say)
+    - **National ID / Passport Number** (if your facility collects this)
+
+    All fields marked with a red asterisk (`*`) are mandatory and must be completed before you can save the record.
+  </Step>
+  <Step title="Enter Contact Information">
+    Scroll to the **Contact Details** section and provide:
+    - **Primary Phone Number** — used for appointment reminders and follow-up communications
+    - **Secondary Phone Number** (optional)
+    - **Email Address** (optional)
+    - **Physical Address** — street, city, and region or county
+    - **Emergency Contact Name** and **Emergency Contact Phone Number** — these are critical for inpatient and surgical cases
+  </Step>
+  <Step title="Add Insurance or Payment Method">
+    If the patient has health insurance, expand the **Insurance & Payment** section and complete:
+    - **Insurance Provider** — select from the registered schemes or type to search
+    - **Member Number / Policy Number**
+    - **Scheme / Plan Name**
+    - **Coverage Validity Dates**
+
+    If the patient is self-paying or sponsored by an employer, select the appropriate **Payment Method** from the dropdown. You can update this information later from the patient record if the details are not available at registration time.
+  </Step>
+  <Step title="Review and Save">
+    Scroll back through the form and verify that all information is accurate. When you are satisfied, click **Register Patient** (or **Save**, depending on your facility's configuration). eHealthSystem validates all required fields before saving. If any required field is missing or incorrectly formatted, an inline error message highlights the relevant field.
+  </Step>
+  <Step title="Record the Generated Patient ID">
+    After a successful save, eHealthSystem automatically generates a unique **Patient ID** (for example, `PT-2024-004821`). This ID appears prominently in the confirmation banner and at the top of the new patient record. Note it down or share it with the patient — it is used across all modules including appointments, billing, pharmacy, and lab results to uniquely identify this individual.
+  </Step>
+</Steps>
+
+## Required vs. Optional Fields
+
+The table below lists the fields available on the registration form and whether each one is required to save the record.
+
+| Field | Required | Notes |
+|---|---|---|
+| First Name | ✅ Yes | |
+| Last Name | ✅ Yes | |
+| Date of Birth | ✅ Yes | |
+| Gender | ✅ Yes | |
+| Primary Phone Number | ✅ Yes | Must be a valid local or international number |
+| Physical Address | ✅ Yes | At minimum, city and region |
+| Emergency Contact Name | ✅ Yes | |
+| Emergency Contact Phone | ✅ Yes | |
+| National ID / Passport | ⚠️ Configurable | Required at some facilities; set by administrator |
+| Email Address | ❌ Optional | |
+| Secondary Phone Number | ❌ Optional | |
+| Insurance Provider | ❌ Optional | Required if payment method is set to Insurance |
+| Member / Policy Number | ❌ Optional | Required if Insurance Provider is selected |
+| Blood Group | ❌ Optional | Can be added later via Medical History |
+| Profile Photo | ❌ Optional | Supported formats: JPG, PNG (max 2 MB) |
+
+## Duplicate Patient Check
+
+To prevent the same patient from being registered more than once, eHealthSystem automatically checks for potential duplicates when you enter a name and date of birth. If the system detects an existing record with a similar name and matching or close date of birth, a **Possible Duplicate Found** warning appears above the form before you save.
+
+The warning displays the matching record(s) with their Patient IDs and basic details. Review the listed records carefully:
+- If one of the listed patients is the same person, click **View Record** to open their existing profile and update any missing information instead of creating a new record.
+- If the listed patients are genuinely different individuals, click **Continue Registration** to proceed and save the new record.
+
+Registering a duplicate patient can cause split medical histories and billing issues, so always resolve duplicate warnings before saving.
+
+<Note>
+  Verify the patient's identity — using a national ID, passport, or other government-issued document — before completing registration. Accurate identification prevents record mix-ups, protects patient safety, and ensures correct billing. Your facility's patient identification policy takes precedence; consult your supervisor if you are unsure which documents to request.
+</Note>
+
+## After Registration
+
+Once a patient is successfully registered, their record is immediately available across all modules in eHealthSystem:
+
+- **Appointments** — schedule visits directly from the patient record
+- **Clinical** — clinicians can open the record to document consultations and issue prescriptions
+- **Laboratory** — lab technicians can attach test requests and results to the patient
+- **Pharmacy** — pharmacists can view and dispense prescriptions linked to the patient
+- **Billing** — finance staff can generate invoices and process payments against the patient account
+
+Navigate to **Patients** > **Patient Management** to search for and open any registered patient record at any time.

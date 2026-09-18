@@ -1,0 +1,113 @@
+---
+title: "Writing and Managing Prescriptions"
+sidebarTitle: "Prescriptions"
+description: "Create, review, and manage electronic prescriptions for patients in eHealthSystem, including drug selection, dosage instructions, and dispensing status tracking."
+---
+
+eHealthSystem replaces paper prescriptions with a fully electronic prescribing workflow. When you write a prescription in eHealthSystem, it is immediately available to the pharmacy team for dispensing — no handwritten slips, no transcription errors, and no lost scripts. The system automatically checks the selected medications against the patient's known allergies and current drug regimen, alerting you to potential interactions before the prescription is saved. Every prescription is stored in the patient's permanent record, giving any authorised clinician a complete medication history at a glance.
+
+---
+
+## Writing a Prescription
+
+You can create a prescription from within an active consultation (the most common workflow) or independently from the Prescriptions module.
+
+<Steps>
+  <Step title="Open the prescription form">
+    From an active consultation, click **Add Prescription** in the Prescriptions section of the consultation form. Alternatively, navigate to **Prescriptions** in the sidebar and click **New Prescription**. Both routes open the same prescription form.
+  </Step>
+  <Step title="Search for and select the patient">
+    If you are accessing prescriptions from outside a consultation, search for the patient by name, ID, or date of birth and select the correct record. If you opened the form from within a consultation, the patient is already linked.
+  </Step>
+  <Step title="Click 'Add Medication'">
+    Click the **Add Medication** button to open the drug selection panel. You can add multiple medications to a single prescription — each is listed as a separate line item on the prescription.
+  </Step>
+  <Step title="Search for and select the medication">
+    Type the drug name (generic or brand) in the formulary search field. Results show the generic name, available formulations (tablet, capsule, liquid, injection, cream, etc.), and strength options. Select the appropriate drug and formulation. If the medication you are looking for is not in the formulary, contact your pharmacy administrator — they can add medications to the facility formulary from the **Pharmacy Settings** panel.
+  </Step>
+  <Step title="Set the dosage, frequency, duration, and route">
+    Complete all required dosage fields:
+    - **Dose:** The amount per administration (e.g., 500 mg, 5 mL, 1 unit)
+    - **Frequency:** How often the medication is taken (e.g., once daily, twice daily, every 8 hours, as needed)
+    - **Route:** How the medication is administered (e.g., oral, intravenous, intramuscular, topical, sublingual, inhalation)
+    - **Duration:** The number of days, weeks, or months the patient should take the medication (e.g., 5 days, 2 weeks). Alternatively, select **Ongoing** for chronic medications with no defined end date.
+    - **Quantity to Dispense:** The total quantity the pharmacy should dispense, calculated automatically from dose × frequency × duration but editable if needed.
+  </Step>
+  <Step title="Add special instructions">
+    Use the **Patient Instructions** field to add any directions the patient should follow — for example, *"Take with food"*, *"Avoid direct sunlight"*, *"Do not crush tablet"*, or *"Complete the full course even if feeling better."* These instructions appear on the printed prescription label prepared by the pharmacist.
+  </Step>
+  <Step title="Add more medications if needed">
+    Click **Add Another Medication** to add a second (or third, etc.) drug to the same prescription. Each additional line goes through the same fields. Adding all medications to one prescription is recommended where clinically appropriate, as it allows the pharmacist to review the complete regimen in one view and the system to run a full interaction check across all selected drugs simultaneously.
+  </Step>
+  <Step title="Review and save the prescription">
+    Review all medication lines for accuracy — check drug name, dose, frequency, route, and duration before saving. If any drug interaction or allergy alert has been raised (see below), address it before proceeding. When you are satisfied, click **Sign & Save Prescription**. The prescription status is set to **Active** and it is immediately visible in the Pharmacy module for dispensing.
+  </Step>
+</Steps>
+
+---
+
+## Prescription Fields Explained
+
+| Field | Description |
+|---|---|
+| **Medication Name** | The generic or brand name of the drug as selected from the formulary |
+| **Formulation** | The physical form of the drug — tablet, capsule, syrup, injection, cream, inhaler, etc. |
+| **Dosage** | The amount administered per dose, stated with units (e.g., 250 mg, 10 mL, 2 drops) |
+| **Frequency** | How often the dose is taken — common options include once daily (OD), twice daily (BD), three times daily (TDS), four times daily (QDS), every 4–6 hours, at night (nocte), and as required (PRN) |
+| **Route** | The route of administration — oral (PO), intravenous (IV), intramuscular (IM), subcutaneous (SC), topical, sublingual (SL), inhalation, rectal, or ophthalmic, among others |
+| **Duration** | The length of treatment, expressed in days, weeks, or months, or marked as ongoing |
+| **Quantity** | Total units to be dispensed by the pharmacy (e.g., 30 tablets, 1 bottle, 2 vials) |
+| **Patient Instructions** | Free-text directions printed on the dispensing label for the patient |
+| **Prescriber** | The clinician writing the prescription — populated automatically from your login |
+
+---
+
+## Drug Interaction and Allergy Alerts
+
+<Warning>
+  eHealthSystem automatically checks every medication you add against the patient's known allergies and their current active prescriptions. If a potential interaction or allergy conflict is detected, a **Drug Alert** banner appears before you can save the prescription. Read every alert carefully. You can acknowledge and override an alert if you have reviewed it and determined it is not clinically significant — but you must document your reason for overriding. Alerts are logged regardless of whether they are overridden, creating an auditable record of prescribing decisions. Never dismiss an alert without reading it.
+</Warning>
+
+---
+
+## Prescription Statuses
+
+| Status | Meaning |
+|---|---|
+| **Draft** | The prescription has been started but not yet signed or saved. It is not visible to the pharmacy. |
+| **Active** | The prescription has been signed and saved. The pharmacy can see and process it. |
+| **Dispensed** | The pharmacist has confirmed that the medication has been dispensed to the patient. |
+| **Cancelled** | The prescription was cancelled before dispensing. The reason is recorded. |
+
+---
+
+## Editing and Cancelling Prescriptions
+
+**Before dispensing:** You can edit or cancel any prescription with a status of **Draft** or **Active**. To edit, open the prescription from the patient's record or from the consultation and click **Edit**. Make your changes and re-save. To cancel, click **Cancel Prescription**, select a reason (e.g., *Clinical decision change*, *Duplicate prescription*, *Patient declined medication*), and confirm. The pharmacist is notified of cancellations automatically.
+
+**After dispensing:** Once a prescription status is **Dispensed**, it cannot be edited or deleted through the standard interface.
+
+<Note>
+  Dispensed prescriptions are part of the permanent medication record and cannot be altered by clinical staff. If a dispensed prescription was recorded in error or requires correction — for example, the wrong drug was dispensed — contact your system administrator. Corrections to dispensed prescriptions require a formal administrative override and are subject to your facility's medication error reporting protocol.
+</Note>
+
+---
+
+## Viewing Prescription History
+
+To view all prescriptions ever written for a patient:
+
+1. Navigate to **Patients** and open the patient's record.
+2. Click the **Prescriptions** tab. The full prescription history is displayed in reverse chronological order.
+3. Each entry shows the drug name, dose, frequency, prescribing clinician, date prescribed, and current status.
+4. Click any prescription row to open the full details, including the dispensing record if the prescription has been filled.
+
+You can filter the prescription list by status (Active, Dispensed, Cancelled), by date range, or by prescribing clinician. This view is helpful when reviewing a patient's long-term medication history before writing a new prescription.
+
+---
+
+## Sending to the Pharmacy
+
+When you save and sign a prescription (status changes from **Draft** to **Active**), it is automatically visible in the **Pharmacy** module. You do not need to print, fax, or manually forward anything. The pharmacist sees a notification in their worklist, reviews the prescription, and processes dispensing from their end. Once the medication has been dispensed, the prescription status in eHealthSystem updates to **Dispensed** and a dispensing timestamp is recorded.
+
+If your facility operates multiple pharmacy points (e.g., an inpatient ward pharmacy and an outpatient dispensary), you can specify the **Dispensing Location** on the prescription so it is routed to the correct pharmacy team.

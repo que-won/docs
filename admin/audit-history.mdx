@@ -1,0 +1,100 @@
+---
+title: "Reviewing the Audit History and Activity Log"
+sidebarTitle: "Audit History"
+description: "View a complete audit trail of all user actions in eHealthSystem, including record edits, deletions, logins, and prescription changes, for compliance and accountability."
+---
+
+eHealthSystem automatically records every significant action performed by every user — from logging in to editing a patient record to voiding an invoice. This complete audit trail is your most important tool for maintaining accountability, satisfying regulatory and accreditation requirements, investigating data discrepancies, and detecting unauthorized access. Because the log is generated automatically and cannot be modified, it provides an objective, tamper-evident record of everything that happens in your system.
+
+## What Is Logged
+
+The audit history captures the following categories of events:
+
+**Authentication Events**
+- User login (successful and failed attempts)
+- User logout
+- Password resets
+
+**Patient Record Events**
+- Patient record creation
+- Patient record edits (each field change is recorded individually)
+- Patient record views (who accessed a record and when)
+- Patient record deletions or merges
+
+**Consultation Events**
+- Consultation creation
+- Consultation edits, including diagnosis and clinical note changes
+- Consultation finalization
+
+**Laboratory Events**
+- Lab order creation
+- Lab order edits or cancellations
+- Sample collection logging
+- Test result entry and submission
+
+**Prescription Events**
+- Prescription creation
+- Prescription dispensing (full and partial)
+- Prescription cancellations
+
+**Billing and Financial Events**
+- Invoice creation
+- Payment recording
+- Invoice voids or reversals
+- Refunds
+
+**User and System Events**
+- Staff account creation
+- Role assignments and changes
+- Account deactivation and reactivation
+- Settings changes (any modification to system configuration)
+
+## Accessing Audit History
+
+Navigate to **Audit History** in the left sidebar. Access to this module requires the **Admin** role. If you do not see **Audit History** in your sidebar, contact your system administrator to confirm your permissions.
+
+## Filtering the Audit Log
+
+The audit log can contain a very large number of entries. Use the available filters to narrow the results to exactly what you need:
+
+- **Date Range**: specify a start and end date to view activity within a particular period
+- **User**: filter by a specific staff member to see everything that user did
+- **Action Type**: filter by a category of action (e.g., Login, Record Edit, Invoice Void) to see all events of that type across all users
+- **Module**: filter by system module (e.g., Laboratory, Pharmacy, Billing) to review all activity within a specific area
+- **Record / Patient**: enter a patient ID or record reference to see all activity related to that specific record
+
+You can combine multiple filters — for example, filtering by both a specific user and a date range — to zero in on a precise slice of activity.
+
+## Reading an Audit Entry
+
+Each row in the audit log represents a single recorded event. The columns are:
+
+| Column | Description |
+|---|---|
+| **Timestamp** | The exact date and time the action occurred, displayed in your configured timezone. |
+| **User** | The full name and username of the staff member who performed the action. |
+| **Action** | A short description of what was done (e.g., *Record Edited*, *Invoice Created*, *User Deactivated*). |
+| **Module** | The area of the system where the action took place (e.g., *Patients*, *Laboratory*, *Billing*). |
+| **Record Affected** | The specific record that was created, modified, or accessed — such as a patient ID, invoice number, or lab order reference. |
+| **IP Address** | The IP address of the device from which the action was performed. Useful for identifying access from unexpected locations. |
+
+Click any row to expand it and view additional detail, including the specific field values that were changed (old value and new value).
+
+<Note>
+  Audit records are **read-only**. No user — including administrators — can edit, delete, or suppress an audit entry. This is by design: the integrity of the audit trail depends on it being immutable.
+</Note>
+
+## Exporting the Audit Log
+
+You can export a filtered view of the audit log to CSV for compliance reporting, external review, or long-term archiving:
+
+1. Apply the filters you need to scope the export (date range, user, module, etc.).
+2. Click **Export to CSV** above the log table.
+3. The system generates a CSV file containing all matching records with the same columns visible in the log view.
+4. Save the file to your secure compliance storage location.
+
+The exported file can be opened in spreadsheet tools such as Microsoft Excel or Google Sheets for further analysis or formatting.
+
+<Warning>
+  If you notice activity in the audit log that you cannot account for — such as records accessed at unusual hours, actions by users who were off duty, logins from unfamiliar IP addresses, or unexpected data changes — treat it as a potential security incident. Do not attempt to investigate on your own by making changes to user accounts before documenting what you have found. Preserve the current state of the log, export the relevant records, and escalate to your system administrator immediately so a proper investigation can be conducted.
+</Warning>

@@ -1,0 +1,96 @@
+---
+title: "Managing Staff Accounts and Access Roles"
+sidebarTitle: "Staff & Access"
+description: "Add staff members, assign roles and permissions, reset passwords, and control module-level access for all users in your eHealthSystem installation."
+---
+
+eHealthSystem uses role-based access control (RBAC) to ensure that every staff member can access the tools they need — and nothing more. Each user account is assigned one or more roles that determine which modules, records, and actions are available to them. This approach protects patient data, supports regulatory compliance, and creates a clear accountability trail for every action taken in the system.
+
+## Built-In Roles
+
+eHealthSystem ships with seven built-in roles. Each role is preconfigured with the permissions most appropriate for that job function.
+
+| Role | Access Level |
+|---|---|
+| **Admin** | Full system access — all modules, user management, system settings, all reports, and audit history. |
+| **Doctor / Clinician** | Consultations, diagnoses, prescriptions, lab order creation and result review, patient records. |
+| **Nurse** | Patient check-in, triage, vital signs recording, ward notes; view-only access to consultations. |
+| **Receptionist** | Patient registration, appointment scheduling, invoice creation, and payment recording. |
+| **Lab Technician** | Viewing and actioning lab orders, sample collection logging, entering and submitting test results. |
+| **Pharmacist** | Viewing prescriptions, dispensing medications, inventory management, and expiry tracking. |
+| **Manager / Supervisor** | Access to all reports and staff activity dashboards; read-only access to clinical records. Cannot create or edit clinical entries. |
+
+<Note>
+  If your installation has been customized, additional roles or modified permission sets may be present. Contact your system administrator for a full list of roles specific to your deployment.
+</Note>
+
+## Adding a New Staff Member
+
+<Steps>
+  <Step title="Navigate to Staff & Access">
+    Click **Staff & Access** in the left sidebar, or go to **Settings > Users**. You must have the **Admin** role to perform this action.
+  </Step>
+  <Step title="Click 'Add New User'">
+    Click the **Add New User** button in the top-right corner of the user list.
+  </Step>
+  <Step title="Enter the staff member's details">
+    Fill in the required fields:
+    - **Full Name**: the staff member's legal name as it should appear in the system
+    - **Email Address**: used for login and system notifications
+    - **Phone Number**: used for contact and, where configured, SMS notifications
+  </Step>
+  <Step title="Assign a role">
+    Select the appropriate role from the **Role** dropdown. Choose the role that most closely matches the staff member's job function. You can update the role later if responsibilities change.
+  </Step>
+  <Step title="Set a temporary password">
+    Enter a temporary password for the account. The staff member will be prompted to create their own password immediately on first login. Make sure to communicate the temporary password to them through a secure channel.
+  </Step>
+  <Step title="Save the account">
+    Click **Save**. The user account is created and the staff member can log in immediately with the temporary password.
+  </Step>
+</Steps>
+
+## Editing a User Account
+
+To update a staff member's name, contact information, or role:
+
+1. Navigate to **Staff & Access**.
+2. Locate the user in the list — use the search bar to filter by name or email if needed.
+3. Click the user's name or the **Edit** icon in their row.
+4. Update the relevant fields.
+5. Click **Save Changes**.
+
+The updated information takes effect immediately. However, if you change a user's **role**, the new permissions apply the next time that user logs in (see note below).
+
+## Deactivating a User Account
+
+When a staff member leaves your organization, deactivate their account rather than deleting it. Deactivation immediately prevents them from logging in while preserving the full audit trail of everything they did in the system — which is essential for compliance and accountability.
+
+To deactivate an account:
+
+1. Navigate to **Staff & Access**.
+2. Find the user and open their profile.
+3. Click **Deactivate Account**.
+4. Confirm the action in the dialog box.
+
+The account status changes to **Inactive**. The user can no longer log in. To reactivate the account in the future (for example, if the staff member returns), open their profile and click **Reactivate**.
+
+<Warning>
+  Deactivate departing staff accounts **immediately** on their last day. An active account belonging to a former employee is a serious security risk — it can be used to access patient records, modify data, or export sensitive information. Do not wait until the end of the week or until an IT request is processed. Deactivation takes only seconds and should be the first step in any staff offboarding checklist.
+</Warning>
+
+## Resetting a Password
+
+If a staff member cannot log in and needs a password reset:
+
+1. Navigate to **Staff & Access** and open the user's profile.
+2. Click **Reset Password**.
+3. Enter and confirm a new temporary password.
+4. Click **Save**.
+5. Inform the staff member of the temporary password through a secure channel.
+
+The user will be prompted to set a new password of their own choosing when they next log in.
+
+<Note>
+  Role changes take effect at the **next login**. If a user is currently logged in when you change their role, their active session continues with the old permissions until they log out and log back in. For urgent permission removals, use **Deactivate Account** to end access immediately, then reactivate with the correct role.
+</Note>

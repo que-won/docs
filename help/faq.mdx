@@ -1,0 +1,130 @@
+---
+title: "Frequently Asked Questions — eHealthSystem"
+sidebarTitle: "FAQ"
+description: "Answers to the most common questions about using eHealthSystem, covering login issues, patient records, billing, lab results, prescriptions, and system access."
+---
+
+Find quick answers to the questions our users ask most often. If you don't find what you're looking for here, reach out to your system administrator or consult the relevant section of this documentation for more detailed guidance.
+
+<AccordionGroup>
+
+  <Accordion title="How do I reset my password?">
+    You cannot reset your own password from the login screen. Contact your **system administrator** and ask them to initiate a password reset on your account. The administrator will set a temporary password and communicate it to you through a secure channel.
+
+    When you log in with the temporary password, eHealthSystem immediately prompts you to create a new password of your own choosing. Your new password must meet the minimum complexity requirements shown on the screen. Once you save the new password, the temporary one is invalidated and you are taken to your dashboard.
+
+    If you are an administrator resetting another user's password, see the [Staff & Access](/admin/staff-access) guide for step-by-step instructions.
+  </Accordion>
+
+  <Accordion title="How do I register a new patient?">
+    Navigate to **Patients** in the left sidebar and click **Register New Patient**. Fill in all required fields — at minimum, the patient's full name, date of birth, gender, and a contact phone number. Additional fields such as address, next of kin, and insurance details are recommended where available.
+
+    When you click **Save**, eHealthSystem automatically generates a unique **Patient ID** for the new record. This ID is used throughout the system — on lab orders, invoices, prescriptions, and reports — to link all activity back to that patient. Make a note of it or print the registration summary for the patient's physical file.
+  </Accordion>
+
+  <Accordion title="Can two patients have the same name?">
+    Yes — eHealthSystem does not prevent you from registering patients with identical names, because duplicate names are a real-world occurrence. However, when you enter a name and date of birth that closely match an existing record, the system displays a **duplicate warning** and shows you the potential matches before you save.
+
+    Always check the potential matches carefully before proceeding. If the person is already registered, open the existing record rather than creating a new one. Duplicate patient records lead to split medical histories, billing errors, and complications with insurance claims. If you accidentally create a duplicate, contact your system administrator — they can merge the records and consolidate the history.
+  </Accordion>
+
+  <Accordion title="How do I search for an existing patient?">
+    Use the **search bar** at the top of the **Patient Management** section. You can search by:
+
+    - **Full name or partial name** (e.g., entering "Ama" will return all patients whose name contains that string)
+    - **Patient ID** (the unique identifier assigned at registration)
+    - **Phone number** (useful when a patient doesn't remember their ID)
+
+    The search results update as you type. Click the correct patient from the results list to open their full record. If you find no results, double-check the spelling or try a different search term before registering a new patient.
+  </Accordion>
+
+  <Accordion title="What happens if I enter the wrong diagnosis?">
+    If the consultation has **not yet been finalized**, you can edit the diagnosis directly. Open the consultation record, click **Edit**, correct the diagnosis field, and save. The change is logged in the audit history, but no special approval is required.
+
+    If the consultation has already been **finalized**, the record is locked to protect its integrity. In this case, contact your **system administrator** and explain the correction needed. The administrator can unlock the record or create an amendment entry. All corrections to finalized consultations are permanently recorded in the [Audit History](/admin/audit-history), including who made the change, what was changed, and when — so the correction is fully transparent and traceable.
+  </Accordion>
+
+  <Accordion title="Why is a lab result showing as 'Pending'?">
+    A status of **Pending** means the lab technician has not yet entered the result for that test. The order has been received by the lab, but the analysis is still in progress or the result has not been recorded in the system yet.
+
+    You can check the current status of any lab order in the **Laboratory** module. Open the relevant order to see which tests are pending, which have results entered, and the expected turnaround time if one was set. If a result is taking longer than expected, follow up directly with the laboratory department. Once the technician enters and submits the result, you will be notified (if notifications are configured) and the status will change to **Complete**.
+  </Accordion>
+
+  <Accordion title="How do I reprint a receipt?">
+    Navigate to **Billing & Payments** in the left sidebar. Search for the patient by name or patient ID, then locate the invoice you need. Click the invoice to open it, then click **Print Receipt**.
+
+    The receipt opens in a print-ready view — you can send it to a connected printer or save it as a PDF. The reprinted receipt is identical to the original and includes all payment details, the invoice number, and your clinic's details. Reprinting does not create a new financial transaction.
+  </Accordion>
+
+  <Accordion title="A medication is out of stock — what do I do?">
+    When a prescribed medication is not available in sufficient quantity, the **pharmacist** has two options:
+
+    - **Partially dispense**: if some stock is available, the pharmacist can dispense what is on hand and mark the remainder as pending. The prescription status changes to **Partially Dispensed**.
+    - **Place on hold**: if no stock is available at all, the pharmacist can place the prescription on hold and flag it for follow-up.
+
+    In both cases, the **prescribing doctor is notified** so they can decide whether to substitute an alternative medication, adjust the dosage, or advise the patient. The pharmacist should also log the item as needing restock in **Pharmacy > Inventory** so that a reorder can be initiated promptly.
+  </Accordion>
+
+  <Accordion title="How do I cancel a prescription?">
+    Open the prescription record from the patient's consultation or from the **Pharmacy** module. If the prescription has **not yet been dispensed**, click **Cancel Prescription** and confirm the action. You will be asked to enter a brief reason for the cancellation.
+
+    Cancellation permissions are restricted:
+    - The **prescribing doctor** can cancel their own prescription at any time before dispensing.
+    - An **Admin** user can cancel any prescription before dispensing.
+    - Once a prescription has been **fully dispensed**, it cannot be cancelled — contact your administrator to create a return or reversal entry if needed.
+
+    All cancellations are recorded in the audit history with the cancellation reason and the user who performed the action.
+  </Accordion>
+
+  <Accordion title="Who can see patient records?">
+    Access to patient records is governed by the role assigned to each user:
+
+    - **Doctors and Clinicians** can view and edit the records of patients they are treating.
+    - **Nurses** can view patient records and record vital signs and triage notes.
+    - **Receptionists** can view registration information and billing records but typically cannot access clinical notes.
+    - **Lab Technicians** can view lab orders and enter results for assigned patients.
+    - **Pharmacists** can view the prescription section of a patient's record.
+    - **Admins and Managers** can view records across the system for oversight purposes.
+
+    Regardless of role, **every access to a patient record is logged** in the audit history — including view-only access. This ensures complete accountability for all interactions with sensitive patient data.
+  </Accordion>
+
+  <Accordion title="How do I add a new staff member?">
+    Navigate to **Staff & Access** in the sidebar (or go to **Settings > Users**) and click **Add New User**. Enter the staff member's full name, email address, and phone number, then assign the appropriate role. Set a temporary password and click **Save** — the account is created immediately.
+
+    The new staff member can log in right away using the temporary password. On their first login, they will be prompted to set a permanent password of their own. For a full walkthrough, see the [Staff & Access](/admin/staff-access) guide.
+  </Accordion>
+
+  <Accordion title="Can I export patient data?">
+    Yes. eHealthSystem provides two main ways to export patient data:
+
+    - **Individual patient summaries**: open a patient's record and look for the **Export** or **Print Summary** option to download their history as a PDF.
+    - **Aggregate reports**: navigate to the **Reports** module to generate and export data across multiple patients — for example, a list of all active patients, visit summaries, or demographic breakdowns. Reports can be exported as **PDF** or **CSV**.
+
+    For bulk data exports (for example, for migration or compliance purposes), contact your system administrator, who can initiate a full data export from **Settings > Backup & Data**.
+  </Accordion>
+
+  <Accordion title="What should I do if I suspect unauthorized access?">
+    Act quickly — the sooner you investigate and respond to a potential security incident, the less damage it can cause.
+
+    1. **Navigate to Audit History** immediately and filter by the suspected user, time period, or affected records. Look for logins at unusual hours, access from unfamiliar IP addresses, or unexplained changes to records.
+    2. **Export the relevant audit log entries** to CSV so you have a preserved, time-stamped record of what you found.
+    3. **Do not delete or deactivate anything yet** without documenting the current state — except if the suspected account is currently active and poses an ongoing risk, in which case deactivating it immediately is appropriate.
+    4. **Contact your system administrator** with the evidence you have gathered. They will coordinate the investigation, notify relevant parties, and take any further remediation steps.
+
+    If your organization has a data protection officer or a security incident response policy, follow that process in parallel.
+  </Accordion>
+
+  <Accordion title="Is my data backed up?">
+    Backups in eHealthSystem are configured and managed by your **system administrator** or hosting provider. The system supports automated scheduled backups as well as on-demand backups that can be triggered from **Settings > Backup & Data**.
+
+    Contact your system administrator to confirm:
+    - **How often** backups run (e.g., daily, hourly)
+    - **Where** backups are stored (on-site, cloud, or both)
+    - **How long** backup copies are retained before being overwritten
+    - **How quickly** data can be restored in the event of a failure
+
+    We strongly recommend that all facilities have a documented, tested backup and recovery plan in place. Do not wait for a data loss event to discover that backups were not configured correctly.
+  </Accordion>
+
+</AccordionGroup>

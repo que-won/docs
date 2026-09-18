@@ -1,0 +1,127 @@
+---
+title: "Managing Patient Visits and the Queue"
+sidebarTitle: "Visits & Queue"
+description: "Learn how to check patients in, manage the visit queue, assign triage priorities, and track patient flow through the clinic in eHealthSystem."
+---
+
+The Visits & Queue module is the central hub for managing patient flow from the moment a patient arrives at your facility to the moment they are discharged. It gives front-desk staff, triage nurses, and clinicians a real-time view of every active visit, ensuring that no patient is overlooked and that care is delivered in the right order based on clinical urgency.
+
+## Checking In a Patient
+
+When a patient arrives — whether they have a scheduled appointment or are walking in for the first time — you start the process by creating a new visit. This places the patient in the queue and notifies the relevant clinician or department.
+
+<Steps>
+  <Step title="Navigate to Visits & Queue">
+    In the left sidebar, click **Visits & Queue** under the Clinical section. The module opens to the live queue view showing all active visits for the current day.
+  </Step>
+  <Step title="Start a new visit">
+    Click **New Visit** (or **Check In Patient** if your facility uses that label). A check-in form opens in a side panel or modal window.
+  </Step>
+  <Step title="Search for and select the patient">
+    Type the patient's name, patient ID, or date of birth in the search field. Select the correct patient from the search results. If the patient is not found and this is their first visit, click **Register New Patient** to create a record before continuing.
+  </Step>
+  <Step title="Select the visit type">
+    Choose the appropriate visit type from the dropdown:
+    - **General Consultation** — routine or first-time appointments
+    - **Follow-Up** — returning patients continuing an existing care plan
+    - **Emergency** — urgent, unscheduled presentations requiring immediate attention
+    - **Lab Only** — the patient is attending solely for specimen collection or to receive results
+    - **Procedure / Treatment** — for scheduled procedures, dressing changes, or in-clinic treatments
+    - **Antenatal / Specialist** — if your facility has specific specialty workflows enabled
+
+    The visit type determines which forms and workflows are presented to the clinician.
+  </Step>
+  <Step title="Assign the attending clinician or department">
+    Select the clinician or department the patient should be routed to. If the patient has a scheduled appointment, this field may be pre-populated. For walk-ins, assign based on availability or current workload.
+  </Step>
+  <Step title="Set the triage priority">
+    Assign a triage priority level based on the patient's presenting condition:
+
+    | Priority | Colour Code | Typical Use |
+    |---|---|---|
+    | **Emergency** | Red | Life-threatening — immediate intervention required |
+    | **Urgent** | Orange | Serious condition — seen within 30 minutes |
+    | **Semi-Urgent** | Yellow | Stable but needs timely care — seen within 2 hours |
+    | **Non-Urgent** | Green | Routine or minor complaint — can wait in normal queue order |
+
+    Triage priority controls how the patient is sorted in the queue. Emergency patients always appear at the top regardless of arrival time.
+  </Step>
+  <Step title="Save the visit">
+    Click **Save** or **Check In**. The patient immediately appears in the queue and the assigned clinician receives a notification (if notifications are enabled for your facility). The visit status is set to **Waiting**.
+  </Step>
+</Steps>
+
+<Warning>
+  Always assign the correct triage priority at check-in. An incorrectly classified priority — particularly under-triaging an emergency patient as non-urgent — can result in dangerous delays in care. When in doubt, escalate the priority and reassess at the triage station.
+</Warning>
+
+---
+
+## The Queue View
+
+The queue is displayed as a live-updating table. Each row represents one active visit. The columns are:
+
+| Column | Description |
+|---|---|
+| **Patient Name** | Full name of the patient, linked to their record |
+| **Arrival Time** | The timestamp when the visit was checked in |
+| **Priority** | Colour-coded triage level (Emergency, Urgent, Semi-Urgent, Non-Urgent) |
+| **Visit Type** | The type of visit selected at check-in |
+| **Assigned Doctor / Department** | The clinician or department responsible for this visit |
+| **Status** | Current stage of the visit in the workflow (see below) |
+| **Actions** | Quick-action buttons to open the consultation, update status, or discharge |
+
+The queue sorts patients by priority first, then by arrival time within the same priority level, so that the most urgent patients always appear at the top. You can also filter the queue by clinician, department, visit type, or status using the filter bar above the table.
+
+---
+
+## Queue Statuses
+
+Each visit moves through a series of statuses as the patient progresses through the facility:
+
+- **Waiting** — The patient has been checked in and is waiting to be seen. No consultation has been opened yet.
+- **In Consultation** — A clinician has opened and started the patient's consultation. The patient is actively being seen.
+- **Lab Pending** — Lab tests have been ordered during the consultation and results are not yet available. The visit is on hold pending results.
+- **Ready for Discharge** — The consultation is complete, all orders are fulfilled, and the patient can be discharged. A staff member still needs to complete the discharge step.
+- **Discharged** — The visit has been formally closed. The patient has left the facility and all visit documentation has been finalised.
+
+Discharged visits are hidden from the default queue view but remain accessible in the **Visit History** tab and in the patient's record.
+
+---
+
+## Re-ordering or Updating Priority
+
+Clinical situations change. If a waiting patient's condition deteriorates, you can escalate their priority at any time:
+
+1. Locate the patient's row in the queue.
+2. Click the priority badge or the **Edit** (pencil) icon on their row.
+3. Select the new priority level from the dropdown.
+4. Optionally add a brief note explaining the reason for the priority change (recommended for audit purposes).
+5. Click **Update**. The queue re-sorts immediately.
+
+You can also reassign a visit to a different clinician or department from the same edit panel if, for example, a patient needs to be redirected to a specialist.
+
+---
+
+## Ending a Visit — Marking a Patient as Discharged
+
+Once a clinician finalises the consultation and all outstanding orders are resolved, you can close the visit:
+
+1. Locate the patient in the queue. Their status should be **Ready for Discharge**.
+2. Click **Discharge** in the Actions column, or open the visit and click the **Discharge Patient** button at the top of the visit record.
+3. Confirm any discharge notes or instructions — for example, follow-up appointment recommendations or take-home advice.
+4. Click **Confirm Discharge**. The visit status changes to **Discharged** and the patient is removed from the active queue.
+
+Discharging a patient is a permanent action in the live queue. If a discharged patient needs to be seen again on the same day, create a new visit for them.
+
+---
+
+## Walk-In vs. Scheduled Visits
+
+eHealthSystem handles both walk-in and scheduled visits through the same check-in flow, but there are a few differences to be aware of:
+
+**Scheduled visits** — When a patient arrives for a pre-booked appointment, their visit may appear as a pending entry in the queue before check-in (if your facility has the appointment auto-populate setting enabled). Click **Check In** next to the pending entry to confirm arrival, verify their details, and activate the visit. The clinician, department, and visit type are usually pre-filled from the appointment.
+
+**Walk-in visits** — Click **New Visit** and complete the form manually. There is no pre-existing appointment record, so you must fill in all fields. Walk-in patients are inserted into the queue according to their triage priority relative to existing patients.
+
+In both cases, the patient's journey through the queue — from Waiting to Discharged — follows the same workflow.

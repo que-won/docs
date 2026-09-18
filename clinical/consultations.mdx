@@ -1,0 +1,124 @@
+---
+title: "Recording Patient Consultations in eHealthSystem"
+sidebarTitle: "Consultations"
+description: "Document clinical consultations including chief complaint, examination findings, diagnosis, treatment plans, and referrals directly within eHealthSystem."
+---
+
+The Consultations module is where clinicians capture the complete clinical encounter — from the patient's presenting complaint through to diagnosis, treatment, and discharge plan. Every consultation is stored in the patient's permanent medical record, creating a longitudinal history of care that any authorised clinician can access. Structured, complete documentation not only supports continuity of care but also drives accurate billing and audit readiness.
+
+## Accessing a Consultation
+
+You can open a consultation in two ways:
+
+- **From the Visits & Queue:** Find the patient in the active queue, confirm their status is **Waiting** or **In Consultation**, then click **Start Consultation** or **Open Consultation** in the Actions column. This is the standard workflow during a clinical session.
+- **From the Patient Record:** Navigate to **Patients**, search for the patient, open their record, and click the **Consultations** tab. From here you can view historical consultations or open the consultation linked to the patient's current active visit.
+
+Once a consultation is opened, the visit status in the queue automatically updates to **In Consultation**.
+
+---
+
+## Consultation Form Sections
+
+The consultation form is divided into clearly labelled sections. You can complete them in order or move between sections freely — progress is auto-saved as a draft while the consultation remains open.
+
+### Chief Complaint
+Record the patient's primary reason for attending in their own words where possible. This is a short, focused statement — for example, *"Persistent headache for three days"* or *"Fever and sore throat."* Keep it concise; the detailed narrative goes in the History of Presenting Illness.
+
+### History of Presenting Illness
+Document the full clinical narrative: onset, duration, character, severity, associated symptoms, aggravating and relieving factors, and any treatment already tried. This is a free-text field that supports rich-text formatting (bold, lists) to help structure your notes.
+
+### Examination Findings / Clinical Notes
+Enter your physical examination findings here — system-by-system or focused, depending on the presentation. Include both positive and negative findings relevant to the differential diagnosis. This field also supports structured templates if your facility administrator has configured specialty-specific examination forms (e.g., obstetric, paediatric, surgical).
+
+### Vital Signs
+The vital signs section captures the patient's measurements at the time of the consultation:
+
+| Field | Unit |
+|---|---|
+| Temperature | °C or °F |
+| Blood Pressure | mmHg (systolic / diastolic) |
+| Pulse Rate | beats per minute |
+| Respiratory Rate | breaths per minute |
+| Oxygen Saturation (SpO₂) | % |
+| Weight | kg or lbs |
+| Height | cm or inches |
+| BMI | calculated automatically from weight and height |
+
+BMI is calculated and displayed automatically once weight and height are entered. Vital signs outside normal reference ranges are highlighted in amber or red to draw your attention to abnormal values.
+
+### Diagnosis
+Enter the patient's diagnosis using the ICD-10 code search or as free text if your facility uses a custom code set. You can add multiple diagnoses — designate one as the **primary diagnosis** and others as **secondary** or **comorbidities**. Accurate diagnosis coding is important for reporting, billing, and referral letters.
+
+### Treatment Plan
+Describe the management plan in detail: clinical decisions, lifestyle advice, wound care instructions, monitoring requirements, or any other directives specific to this encounter. This section appears in discharge summaries and referral letters, so write clearly and completely.
+
+### Referrals
+If the patient needs to be seen by another specialist or facility, create a referral here. Enter the receiving clinician or department, the reason for referral, urgency level, and any supporting information. eHealthSystem generates a formatted referral letter from this data that you can print or send electronically.
+
+---
+
+## Completing a Consultation
+
+<Steps>
+  <Step title="Open the patient's active visit">
+    Navigate to **Visits & Queue** and locate the patient in the queue. Click **Start Consultation** in the Actions column. The consultation form opens and the visit status updates to **In Consultation**.
+  </Step>
+  <Step title="Click 'Start Consultation'">
+    If a draft consultation already exists (for example, from a previous incomplete session), you will be prompted to continue the existing draft or start fresh. In most cases, continue the existing draft to preserve any previously entered information.
+  </Step>
+  <Step title="Enter vital signs">
+    Complete the Vital Signs section first. Nurses or health assistants often record vitals before the clinician begins, but you can add or edit values at any point. Ensure all fields are populated — many facilities require a complete vital signs entry before the consultation can be finalised.
+  </Step>
+  <Step title="Record the chief complaint and clinical notes">
+    Fill in the **Chief Complaint**, **History of Presenting Illness**, and **Examination Findings** sections. Use the text formatting tools as needed to structure your notes. If your facility has configured examination templates, select the relevant template to populate a structured form.
+  </Step>
+  <Step title="Add the diagnosis">
+    Search for and select the appropriate ICD-10 code(s) in the Diagnosis section. If you cannot find the exact code, use the free-text diagnosis field. Add secondary diagnoses and comorbidities as needed.
+  </Step>
+  <Step title="Order lab tests or prescriptions as needed">
+    If the patient requires laboratory investigations, click **Order Lab Tests** within the consultation to create a lab order without leaving the form. To prescribe medication, click **Add Prescription**. Both actions open a quick panel so you can complete the order and return to the consultation. See [Ordering Lab Tests](/clinical/laboratory) and [Writing Prescriptions](/clinical/prescriptions) for detailed guidance on these workflows.
+  </Step>
+  <Step title="Enter the treatment plan and any referrals">
+    Complete the **Treatment Plan** section with your management instructions. If a referral is required, open the **Referrals** section and fill in the referral details. You can generate and preview the referral letter before saving.
+  </Step>
+  <Step title="Save and finalise the consultation">
+    Click **Finalise Consultation** to complete the encounter. This locks the consultation record, updates the visit status to **Ready for Discharge** (or **Lab Pending** if outstanding lab orders exist), and writes the encounter to the patient's permanent record. If you are not ready to finalise, click **Save Draft** to preserve your progress.
+  </Step>
+</Steps>
+
+---
+
+## Ordering Lab Tests from Within a Consultation
+
+You do not need to leave the consultation form to order lab tests. Click the **Order Lab Tests** button in the consultation toolbar or in the dedicated Lab Orders section of the form. A panel opens where you can search for tests, add instructions, and submit the order. Once placed, the order appears in the Laboratory module and the visit status updates to **Lab Pending** until results are available.
+
+For full details on the laboratory workflow — including how results are entered and reviewed — see [Ordering and Managing Laboratory Tests](/clinical/laboratory).
+
+---
+
+## Writing Prescriptions from Within a Consultation
+
+To prescribe medication during a consultation, click **Add Prescription** in the Prescriptions section of the form. This opens the prescription panel where you can search the drug formulary, set dosage and frequency, and save the prescription without leaving the consultation. Once saved, the prescription is immediately visible to the pharmacy team.
+
+For a complete walkthrough of the prescription workflow, including drug interaction alerts and dispensing status, see [Writing and Managing Prescriptions](/clinical/prescriptions).
+
+---
+
+## Finalising vs. Saving as Draft
+
+<Note>
+  A consultation can exist in two states: **Draft** and **Finalised**. While in Draft, the consultation is editable and is not yet counted as a completed encounter in reports or billing. Once you click **Finalise Consultation**, the record is locked for editing — you can add an addendum if a correction is needed, but the original content cannot be altered. Only finalise a consultation when the clinical documentation is complete and accurate.
+</Note>
+
+---
+
+## Viewing Past Consultations
+
+To review a patient's consultation history:
+
+1. Navigate to **Patients** and search for the patient by name or ID.
+2. Open their patient record and click the **Consultations** tab.
+3. The tab displays a chronological list of all past consultations, with the date, attending clinician, primary diagnosis, and status for each encounter.
+4. Click any row to open the full consultation record and view all documented details, including vital signs, examination findings, orders, and prescriptions linked to that encounter.
+
+You can also filter consultations by date range or by clinician using the filter controls at the top of the list. Consultations are read-only once finalised; if a correction is needed, use the **Add Addendum** option on the finalised record.

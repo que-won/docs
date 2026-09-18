@@ -1,0 +1,106 @@
+---
+title: "Configuring eHealthSystem Settings"
+sidebarTitle: "Settings"
+description: "Configure clinic details, system preferences, module settings, notification options, and branding for your eHealthSystem installation from the Settings panel."
+---
+
+The Settings module is the control center for your eHealthSystem installation. From here, system administrators can configure everything that shapes how the platform behaves — from the clinic's name and logo on printed documents, to fee schedules, drug formularies, notification triggers, and data backup options. Changes you make in Settings affect the entire system, so take care to review each setting before saving.
+
+## Accessing Settings
+
+Navigate to **Settings** in the left sidebar. You must have the **Admin** role to access this module. Most settings sections are organized as sub-pages within Settings — use the secondary navigation panel to move between categories.
+
+## Settings Categories
+
+### Clinic Profile
+
+Configure the core identity information for your clinic or hospital. This information appears on all reports, printed invoices, receipts, prescription slips, and patient-facing documents.
+
+- **Clinic Name**: the official name of your facility
+- **Address**: physical address (street, city, postal code, country)
+- **Contact Information**: phone number(s) and email address
+- **Logo**: upload your clinic's logo (PNG or JPEG, recommended size 300×300px or larger)
+
+Keeping this information accurate ensures that every document your clinic produces is correctly branded and includes valid contact details for patients and insurers.
+
+### User Management
+
+This section links directly to the **Staff & Access** module, where you can add new users, assign roles, reset passwords, and deactivate accounts. See the [Staff & Access](/admin/staff-access) guide for full instructions.
+
+### Billing Settings
+
+Configure all financial parameters for the system:
+
+- **Fee Schedules**: define service fees for consultations, procedures, and other chargeable items. You can create multiple schedules (for example, a general schedule and an insurance schedule).
+- **Payment Methods**: enable or disable the payment methods available at point of sale (cash, mobile money, bank card, insurance, etc.)
+- **Tax / VAT Settings**: configure whether tax is applied to invoices, the applicable rate, and how it is displayed on receipts.
+- **Invoice Numbering**: set the prefix and starting number for invoice IDs to match your internal accounting conventions.
+
+### Lab Settings
+
+Configure the laboratory module for your facility:
+
+- **Test Catalog**: add, edit, or deactivate the lab tests your facility offers. Each test can have a name, code, sample type, and turnaround time.
+- **Reference Ranges**: set normal reference ranges for each test, with separate ranges by patient age group and gender if needed.
+- **Lab Department Settings**: configure sub-departments (e.g., Haematology, Biochemistry, Microbiology) and assign technicians.
+
+### Pharmacy Settings
+
+Configure the pharmacy and dispensing module:
+
+- **Drug / Formulary Catalog**: manage the list of medications available for prescribing and dispensing. Each item includes name, form, strength, and unit.
+- **Low-Stock Thresholds**: set the minimum stock level for each medication. When stock falls below the threshold, the system flags the item and can trigger a notification.
+
+### Notification Settings
+
+Configure when and how the system sends automated notifications to staff or patients:
+
+- **Appointment Reminders**: send SMS or email reminders to patients before scheduled appointments
+- **Lab Results Ready**: notify the requesting clinician when a lab result has been entered and is ready for review
+- **Low Stock Alerts**: notify the pharmacist or store manager when a medication or supply item falls below its threshold
+- **Invoice Overdue**: notify the billing team when a patient invoice passes its due date unpaid
+
+For each trigger, you can specify the delivery channel (email, SMS, or both) and, where applicable, the lead time (for example, send appointment reminders 24 hours in advance).
+
+### System Preferences
+
+Configure global display and localization settings:
+
+- **Date Format**: choose between DD/MM/YYYY, MM/DD/YYYY, or YYYY-MM-DD
+- **Currency**: set the currency symbol and code used throughout the system (e.g., KES, USD, NGN, GHS)
+- **Language / Locale**: select the display language for the system interface
+
+### Backup & Data
+
+If your installation supports manual backup or data export:
+
+- **Trigger a Backup**: click **Run Backup Now** to create an on-demand snapshot of the database
+- **Export Data**: download a full or partial data export in a structured format for archiving or migration
+- **Backup Schedule**: view the current automated backup schedule configured by your system administrator
+
+Contact your system administrator or hosting provider to review your backup frequency, retention period, and off-site storage arrangements.
+
+## Updating Clinic Information
+
+<Steps>
+  <Step title="Go to Settings > Clinic Profile">
+    Click **Settings** in the sidebar, then select **Clinic Profile** from the secondary navigation.
+  </Step>
+  <Step title="Edit the fields you want to update">
+    Click into any field and type the updated information. All fields display the current saved value.
+  </Step>
+  <Step title="Upload a new logo if needed">
+    Click **Upload Logo** and select an image file from your computer. The system displays a preview of the uploaded image. If the preview looks correct, proceed to save.
+  </Step>
+  <Step title="Save your changes">
+    Click **Save Changes**. The system confirms the update and applies the new information immediately to all new reports and documents.
+  </Step>
+</Steps>
+
+<Warning>
+  Changes to **Billing Settings** — including fee schedules and tax rates — apply to **new invoices only**. Existing invoices that were created before the change are not retroactively updated. If you need to correct the amount on an existing invoice, void it and reissue it under the correct fee schedule.
+</Warning>
+
+<Note>
+  Every change made in Settings is recorded in the system's **Audit History**, including which user made the change, what was changed, and when. If you need to review or audit configuration changes, navigate to **Audit History** and filter by the **Settings** module.
+</Note>
